@@ -70,9 +70,6 @@ AudioPlayer song;
 AudioMetaData meta;  // meta data of a song 
 int songLength = 0;
 boolean paused = false; 
-FFT fft;          // frequence display
-PImage mp3Image;  // show cover image from MP3
-boolean showMp3Image = true; 
 //
 // screen buttons 
 Button buttonPause; 
@@ -80,12 +77,6 @@ Button buttonProgressFrame;
 Button buttonProgressData;
 Button buttonPrevious;
 Button buttonNext;
-Button buttonFolder;
-Button buttonShowSongListOrOneSong;
-Button buttonFolderUp;
-Button buttonHome;
-Button buttonPreviousFolder;
-Button buttonNextFolder;
 ArrayList<Button> buttonsList = new ArrayList();
 
 // store time since last mouse moved - for tool tip text

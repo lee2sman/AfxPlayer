@@ -4,24 +4,6 @@
 void showOtherScreenElements() {
   // when we listen to a song
   // 
-  // first perform a forward fft on one of song's buffers
-  // I'm using the mix buffer
-  // but you can use any one you like
-  if (showFFT) {
-    if (!(fft==null)) {
-      fft.forward(song.mix);
-
-      stroke(255, 0, 0, 128);
-      // draw the spectrum as a series of vertical lines
-      // I multiple the value of getBand by 4
-      // so that we can see the lines better
-      for (int i = 0; i < fft.specSize(); i++)
-      {
-        line(i, height, i, height - fft.getBand(i)*4);
-      } // for
-    } // if
-  } // if  
-  //
   fill(255);
   try {
     // show played 
@@ -42,7 +24,6 @@ void showOtherScreenElements() {
     // do nothing
   }
   //
-  buttonShowSongListOrOneSong.display();
   buttonPrevious.display();
   buttonNext.display();
   //

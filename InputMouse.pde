@@ -13,7 +13,6 @@ void mousePressed() {
     break;
   case stateFileManager:
     // if file manager 
-    analyzeButtonForStateFileManager() ;
     break;
   case stateHelp:
     // return to former state 
@@ -22,9 +21,6 @@ void mousePressed() {
     else 
       state=stateNormal;
     break;
-  case stateDrives:
-    analyzeButtonForDrives();
-    break; 
   default:
     println ("Error 123, tab InputMouse: "+state);
     exit();
@@ -73,13 +69,7 @@ void analyzeButton() {
   }
   else if (buttonPrevious.over()) {
     command( buttonPrevious.commandNumber );
-  }
-  else if (buttonFolder.over()) {
-    command( buttonFolder.commandNumber );
-  }  
-  else if (buttonShowSongListOrOneSong.over()) {
-    command( buttonShowSongListOrOneSong.commandNumber );
-  }     
+  }       
   else {
     // check song list and try to go to song 
     if (showSongList==true) { 
@@ -94,50 +84,6 @@ void analyzeButton() {
   //
 } // func 
 //
-void analyzeButtonForStateFileManager() {
-  // check button to open a new folder  
-  if (buttonFolder.over()) {
-    // open dialog
-    command( buttonFolder.commandNumber );
-  } //
-  else if (buttonFolderUp.over()) {
-    // go folder up
-    command( buttonFolderUp.commandNumber );
-  } //
-  else if (buttonHome.over()) {
-    // go home
-    command( buttonHome.commandNumber );
-  } //
-  else if (buttonPreviousFolder.over()) {
-    // go home
-    command( buttonPreviousFolder.commandNumber );
-  } //
-  else if (buttonNextFolder.over()) {
-    // go home
-    command( buttonNextFolder.commandNumber );
-  } //
-  else {
-    // enter folder 
-    checkFolderListForStateFileManager();
-  } // else
-} // func
-
-void analyzeButtonForDrives() {
-  // check button to open a new folder  
-  if (buttonFolder.over()) {
-    // open dialog
-    command( buttonFolder.commandNumber );
-  } //
-  else if (buttonHome.over()) {
-    // go home
-    state=stateFileManager;
-    command( buttonHome.commandNumber );
-  }
-  else {
-    // enter folder 
-    checkFolderListDrives();
-  } // else
-} // func
 
 void checkFolderListForStateFileManager() {
   // 

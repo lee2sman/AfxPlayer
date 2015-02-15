@@ -22,7 +22,6 @@ void normalProgram () {
   //
   showOtherScreenElements() ;
   //
-  buttonFolder.display();
   //
   // show song list or show info table 
   if ( showSongList ) {
@@ -49,12 +48,6 @@ void normalProgram () {
   }
   catch (Exception e) {
     // do nothing
-  }
-  //
-  if (showMp3Image) {
-    if (mp3Image!=null) {
-      image(mp3Image, width-mp3Image.width, height-mp3Image.height);
-    }
   }
   //
   // yellow mouse over tool tip 
@@ -87,17 +80,6 @@ void stateFileManagerFunction() {
     + "\nPlease use \"open folder\" to change folder. "
     + "Please note that \nthe folder itself (not only its subfolders) must contain mp3s.", 20, 20 );
 
-  buttonFolderUp.display();
-  buttonHome.display();
-  buttonPreviousFolder.display();
-  buttonNextFolder.display();
-
-  if (folderDoesExist)
-    headline="folder contains ";
-  else
-    headline="folder does not exist";
-  showListFunction(headline, namesFolders, -1);
-
   // yellow mouse over tool tip 
   checkMouseOver();
   //
@@ -119,10 +101,7 @@ void stateDrivesFunction() {
   headline="Drives are";
   showListFunction(headline, namesFolders, -1);
 
-  buttonHome.display();
-  buttonPreviousFolder.display();
-  buttonNextFolder.display();
-
+ 
   // yellow mouse over tool tip 
   checkMouseOver();
 

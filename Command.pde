@@ -42,28 +42,8 @@ void command( int commandNumber ) {
       indexFile=0; // 1st song in folder  
     getCurrentSong() ;
     break;
-  case 4:
-    // folder
-    state=stateFileManager;
-    makeFolderList(true);
-    break;
-  case 5:
-    // toggle 
-    showSongList=!showSongList;
-    // change button accordingly 
-    changeButtonSongList();
-    break;
   case -1:
     // undefined
-    break; 
-  case 6:
-    // go one folder up (parent folder)
-    folderUpFunction();
-    break; 
-  case 7:
-    // go to home folder 
-    goHomeFolder();
-    makeFolderList(true);
     break;
   case 8:
     // prev folder
@@ -71,16 +51,6 @@ void command( int commandNumber ) {
     if (usedPathsIndex<0)
       usedPathsIndex=0; 
     File temp = usedPaths.get(usedPathsIndex);
-    if (temp!=pathGlobal)
-      pathGlobal = temp;
-    makeFolderList(false) ;
-    break;
-  case 9:
-    // next folder 
-    usedPathsIndex++;
-    if (usedPathsIndex>usedPaths.size())
-      usedPathsIndex=usedPaths.size(); 
-    temp = usedPaths.get(usedPathsIndex);
     if (temp!=pathGlobal)
       pathGlobal = temp;
     makeFolderList(false) ;

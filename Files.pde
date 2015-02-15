@@ -16,12 +16,6 @@ void getCurrentSong() {
       songLength=song.length();
       // load meta
       meta = song.getMetaData();
-      // an FFT needs to know how
-      // long the audio buffers it will be analyzing are
-      // and also needs to know
-      // the sample rate of the audio it is analyzing
-      fft = new FFT(song.bufferSize(), song.sampleRate());
-      //
       song.play();
     } // if 
     else 

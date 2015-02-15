@@ -54,73 +54,12 @@ void defineButtons() {
   buttonNext.hasImage=true;
   buttonNext.imageType= buttonNext.imgTriangleRight;
   buttonNext.colorImgFill=color (255, 0, 0);
-
-  // open folder 
-  buttonFolder = new Button ( width-50, 65, 
-  40, 20, 
-  false, color (0), 
-  true, color (255), 
-  "Open", 
-  "Open folder", 
-  4);
+ 
   //
-  // list or meta
-  buttonShowSongListOrOneSong = new Button ( 10, 65, 
-  34, 20, 
-  false, color (0), 
-  true, color (255), 
-  "List", 
-  "Show song list", 
-  5);
-  // change button accordingly 
-  changeButtonSongList();
   //
-  buttonFolderUp= new Button ( width-50, 95, 
-  40, 20, 
-  false, color (0), 
-  true, color (255), 
-  "", 
-  "Folder Up", 
-  6);
-  buttonFolderUp.hasImage  = true;
-  buttonFolderUp.imageType = buttonFolderUp.imgFolderUp;
-  buttonFolderUp.colorImgFill=color (0, 255, 0);
+  
   //
-  buttonHome = new Button ( width-98, 95, 
-  40, 20, 
-  false, color (0), 
-  true, color (255), 
-  "", 
-  "Go to home folder", 
-  7);
-  buttonHome.hasImage  = true;
-  buttonHome.imageType = buttonFolderUp.imgHome;
-  buttonHome.hasColorImgFill=false;    // no fill 
-  buttonHome.colorImgFill=color (255); // not in use
-  buttonHome.hasColorImgStroke=true;   // stroke
-  buttonHome.colorImgStroke=color (0, 255, 0); // green 
-  //
-  buttonPreviousFolder = new Button ( width-190, 95, 
-  20, 20, 
-  false, color (0), 
-  true, color (255), 
-  "", 
-  "Previous Folder", 
-  8);
-  buttonPreviousFolder.hasImage=true;
-  buttonPreviousFolder.imageType=buttonPrevious.imgTriangleLeft;
-  buttonPreviousFolder.colorImgFill=color (0, 255, 0);
-
-  buttonNextFolder = new Button ( width-165, 95, 
-  20, 20, 
-  false, color (0), 
-  true, color (255), 
-  "", 
-  "Next Folder", 
-  9);
-  buttonNextFolder.hasImage=true;
-  buttonNextFolder.imageType= buttonNext.imgTriangleRight;
-  buttonNextFolder.colorImgFill=color (0, 255, 0);
+  
 } // func 
 
 // ----------------------------------------------------------------------
@@ -132,22 +71,6 @@ void checkMouseOver() {
     switch (state) {
     case stateNormal: 
       checkMouseOverForStateNormal () ;
-      break;
-    case stateFileManager:  
-      if (buttonFolder.over()) {
-        buttonFolder.showMouseOver();
-      } // if
-      else if (buttonFolderUp.over()) {
-        buttonFolderUp.showMouseOver();
-      } // if
-      else if (buttonHome.over()) {
-        buttonHome.showMouseOver();
-      } // if      
-      break;
-    case stateDrives:
-      if (buttonHome.over()) {
-        buttonHome.showMouseOver();
-      } // if      
       break;
     default:
       println ("Missing state, error 106, tab Buttons");
@@ -206,35 +129,12 @@ void checkMouseOverForStateNormal () {
     }
     buttonPrevious.showMouseOver() ;
   }
-  else if (buttonFolder.over()) {
-    buttonFolder.showMouseOver() ;
-  } 
-  else if (buttonShowSongListOrOneSong.over()) {
-    buttonShowSongListOrOneSong.showMouseOver() ;
-  }  
   else {
     //
   } // else
 } // func 
 
-void changeButtonSongList() {
-  // this is for one special button
-  // change button accordingly:
-  // it can show the word Song or the word List 
-  if (showSongList)
-  {
-    // showing the list, make button the opposite
-    buttonShowSongListOrOneSong.text="Song";
-    buttonShowSongListOrOneSong.textMouseOver="Show the data of current song";
-    buttonShowSongListOrOneSong.w=40;
-  }
-  else
-  {
-    buttonShowSongListOrOneSong.text="List";
-    buttonShowSongListOrOneSong.textMouseOver="Show the song list";
-    buttonShowSongListOrOneSong.w=31;
-  }
-}
+
 
 // =======================================================================
 
