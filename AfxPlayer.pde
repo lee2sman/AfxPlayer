@@ -105,7 +105,7 @@ ClassStatusMsg statusMsg = new ClassStatusMsg();
 //
 void setup()
 {
-  size(500, 500);
+  size(500, 250);
   pathGlobal=new File (pathGlobalDefault);
   usedPaths.add(pathGlobal);
   usedPathsIndex=0;

@@ -33,12 +33,9 @@ void showMeta() {
 } // 
 
 void setLineBkg( int i, int y) {
-  // only lines 
-  noFill();
-  stroke(255);
   //rect(-1, y-12, width+3, 17);
   line(-1, y-12, width+3, y-12);
-  fill(255);
+  fill(0);
 }
 
 void setLineBkg2( int i, int y) {
