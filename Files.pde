@@ -92,7 +92,6 @@ void getFolder() {
     state = stateNormal;
     // make buttons for list
     makeButtonsForList(namesFiles);
-    tryToShowCoverImage();
   }  // else  
   //
 }  // func 
